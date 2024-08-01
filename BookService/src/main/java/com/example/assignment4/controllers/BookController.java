@@ -15,11 +15,18 @@ import java.util.NoSuchElementException;
 @RequestMapping("/books")
 public class BookController {
 
-    @Autowired
-    private BookService bookService;
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final BookService bookService;
+    private final JdbcTemplate jdbcTemplate;
+
+    // Constructor injection
+    public BookController(BookService bookService ,JdbcTemplate jdbcTemplate) {
+        this.bookService = bookService;
+        this.jdbcTemplate=jdbcTemplate;
+    }
+
+
+
 
     @GetMapping
     public ResponseEntity<List<BookModel>> getAllBooks() 

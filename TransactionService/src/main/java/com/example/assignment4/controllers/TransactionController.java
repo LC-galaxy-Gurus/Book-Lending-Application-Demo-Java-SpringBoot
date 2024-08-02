@@ -12,9 +12,12 @@ import java.util.List;
 @RequestMapping("/transactions")
 public class TransactionController {
 
-    @Autowired
-    private TransactionService transactionService;
 
+    private final TransactionService transactionService;
+
+    public TransactionController(TransactionService transactionService){
+        this.transactionService=transactionService;
+    }
     @GetMapping
     public ResponseEntity<List<TransactionModel>> getAllTransactions() 
     {

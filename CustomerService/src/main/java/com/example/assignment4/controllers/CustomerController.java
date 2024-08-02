@@ -2,6 +2,7 @@ package com.example.assignment4.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 import com.example.assignment4.models.CustomerModel;
 import com.example.assignment4.services.CustomerService;
@@ -12,8 +13,12 @@ import java.util.List;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    @Autowired
-    private CustomerService customerService;
+
+    private final CustomerService customerService;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+
+    }
 
     @GetMapping
     public ResponseEntity<List<CustomerModel>> getAllCustomers()

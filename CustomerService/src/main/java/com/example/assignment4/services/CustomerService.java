@@ -9,9 +9,12 @@ import com.example.assignment4.repositories.CustomerRepository;
 @Service
 public class CustomerService
 {
-    @Autowired
-    private CustomerRepository customerRepository;
 
+    private final CustomerRepository customerRepository;
+
+    public CustomerService(CustomerRepository customerRepository){
+        this.customerRepository=customerRepository;
+    }
     public List<CustomerModel> getAllCustomers()
     {
         List<CustomerModel> customers = customerRepository.findAll();

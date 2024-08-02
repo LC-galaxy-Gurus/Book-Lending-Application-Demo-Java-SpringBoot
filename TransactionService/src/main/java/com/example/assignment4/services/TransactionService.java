@@ -10,9 +10,12 @@ import com.example.assignment4.repositories.TransactionRepository;
 @Service
 public class TransactionService 
 {
-    @Autowired
-    private TransactionRepository transactionRepository;
 
+    private final TransactionRepository transactionRepository;
+
+    public TransactionService(TransactionRepository transactionRepository){
+        this.transactionRepository=transactionRepository;
+    }
     public List<TransactionModel> getAllTransactions() 
     {
         return transactionRepository.findAll();

@@ -1,6 +1,6 @@
 package com.example.assignment4.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.assignment4.models.BookModel;
 import com.example.assignment4.services.BookService;
 import java.util.List;
-import java.util.NoSuchElementException;
+
 
 @CrossOrigin(origins = "*")
 @RestController

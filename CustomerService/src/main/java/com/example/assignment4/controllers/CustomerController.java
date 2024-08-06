@@ -13,12 +13,9 @@ import java.util.List;
 @RequestMapping("/customers")
 public class CustomerController {
 
+    @Autowired
+    private CustomerService customerService;
 
-    private final CustomerService customerService;
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-
-    }
 
     @GetMapping
     public ResponseEntity<List<CustomerModel>> getAllCustomers()

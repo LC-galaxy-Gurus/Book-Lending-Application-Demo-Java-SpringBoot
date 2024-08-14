@@ -1,5 +1,6 @@
 package com.example.assignment4.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -76,7 +77,7 @@ public class CustomerController {
         }
 
 
-        return ResponseEntity.ok(newCustomer);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newCustomer);
     }
 
     @PutMapping("/{id}")

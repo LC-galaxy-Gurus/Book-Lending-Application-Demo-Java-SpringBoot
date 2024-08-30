@@ -1,5 +1,4 @@
 package com.example.assignment4.exceptions;
-
 import static org.junit.Assert.assertEquals;
 
 import java.time.LocalDateTime;

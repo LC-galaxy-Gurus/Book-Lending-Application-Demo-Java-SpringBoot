@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -37,7 +38,7 @@ public class CustomerExceptionsHandlerTest {
 
     private Map<String, Object> expectedBody;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         expectedBody = new HashMap<>();
         expectedBody.put("timestamp", LocalDateTime.now());

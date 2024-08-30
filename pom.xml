@@ -10,7 +10,22 @@
         <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <dependencies>
+        <dependencies>
+        <!-- Remove these explicit JUnit dependencies -->
+        <!--<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>-->
+        
+        <!-- Keep other dependencies -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -27,6 +42,7 @@
             <version>2.0.4</version>
         </dependency>
     </dependencies>
+
     <groupId>groupId</groupId>
     <artifactId>Book-Lending-Application-Java-SpringBoot</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -41,5 +57,33 @@
         <module>FrontEndMVC</module>
         <module>TransactionService</module>
     </modules>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.8</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                <id>report</id>
+                <phase>verify</phase>
+                <goals>
+                    <goal>report</goal>
+                </goals>
+            </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
 
  </project>
